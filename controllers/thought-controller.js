@@ -4,6 +4,7 @@ const { Thought, User } = require("../models");
 const thoughtController = {
   //Get all thoughts
   getAllThoughts(req, res) {
+    //Find all thoughts and populate the thoughts
     Thought.find({})
       .populate({
         path: "thoughts",
