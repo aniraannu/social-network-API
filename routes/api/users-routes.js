@@ -1,3 +1,4 @@
+//import router from express
 const router = require('express').Router();
 //Import all functions from the user-controller
 const {
