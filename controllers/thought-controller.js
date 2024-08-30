@@ -33,7 +33,7 @@ const thoughtController = {
       });
   },
   //POST to create a new thought
-  createThought({ params, body }, res) {
+  addThought({ params, body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
         console.log(_id);

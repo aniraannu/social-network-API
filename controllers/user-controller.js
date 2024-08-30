@@ -1,5 +1,5 @@
 //Import the user schema
-const User = require("../models/user");
+const { User } = require("../models");
 
 //Create the user controller
 const userController = {
@@ -40,11 +40,20 @@ const userController = {
   },
   //POST Routes
   //create a new user
-  createUser({ body }, res) {
-    User.create(body)
-      .then((dbUserData) => res.json(dbUserData))
-      .catch((err) => res.status(400).json(err));
-  },
+  async createUser(req, res) {
+    try {
+        const user = await User.create(req.body);
+        res.json(user);
+    } catch (err) {
+      console.log(err);
+        res.status(500).json(err);
+    }
+},
+  // createUser({ body }, res) {
+  //   User.create(body)
+  //     .then((dbUserData) => res.json(dbUserData))
+  //     .catch((err) => res.status(400).json(err));
+  // },
   //PUT Routes
   //update a user by _id
   updateUser({ params, body }, res) {
@@ -98,13 +107,7 @@ const userController = {
       { $pull: { friends: params.friendId } },
       { new: true }
     )
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id" });
-          return;
-        }
-        res.json(dbUserData);
-      })
+      .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));
   },
 };

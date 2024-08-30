@@ -1,7 +1,6 @@
 # Social Network API
 This API allows users to create and manage a social network with features like creating profiles, creating posts, commenting on posts, and following other users. The API is built using NoSQL technologies and JavaScript.
 
-
 ## Description
 This application is an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.​This backend app that can be used for social media startups, uses a NoSQL database.It also uses Express.js for routing, and a MongoDB database. The Mongoose ODM is used to handle large amounts of unstructured data, including User and Thought models and schemas. We also made use of a subdocument in thoughts model . When the application is invoked, the server is started and Mongoose models are synced to the MongoDB database.
 
