@@ -19,10 +19,13 @@ The following animation demonstrates the application functionality:
 1. User Routes: 
  A user can create a user with a username and valid email address. When created, each user is assigned a unique user ID.To create a user, click the POST request and enter the user's username and email address. Click Send. There are two GET requests that return user information. To return all users, click the Find All Users request, then click on Send. To return a single user, click the Find User by Id request. On the URL, enter the user's ID.
 
- ![Find All users](./assets/images/Example3.png)
- ![Find a single user by ID](./assets/images/Example3.png)
+ ![Create a new user](./Assets/images/create-newuser.png)
+ ![Get All users](./Assets/images/get-all-users.png)
+ ![Get a single user by ID](./Assets/images/get%20a%20single%20user%20by%20id.png)
 
 To update a user by ID, click the PUT request. On the URL, enter the ID of the user whose information is going to be updated. To delete a user by ID, click the DELETE request and enter the user's ID. A message that reads, "User and thoughts deleted!" will appear if the user has been deleted from the database. If there is no such user or user ID in the system, the message, "No user with this id!" is shown. Click Find All Users to see if the user has been deleted.
+![Update a user](./Assets/images/update-user.png)
+![Remove a user](./Assets/images/remove-a-user.png)
 
 2. Friend Routes:
 A user can add a friend and delete a friend.To add a friend, click the POST request. On the URL enter the user ID of the user who is adding a friend, then the user ID of the friend the user is adding. To see the user's friends, click Find All Users. The ID of the friends the user added are listed under "friends". The "friendCount" indicates the number of friends the user added.
