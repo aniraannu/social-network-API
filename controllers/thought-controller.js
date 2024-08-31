@@ -33,25 +33,41 @@ const thoughtController = {
       });
   },
   //POST to create a new thought
-  addThought({ params, body }, res) {
-    Thought.create(body)
-      .then(({ _id }) => {
-        console.log(_id);
-        return User.findOneAndUpdate(
-          { _id: body.userId },
-          { $push: { thoughts: _id } },
-          { new: true }
+  async addThought(req, res) {
+    try {
+        const thought = await Thought.create(req.body);
+        const user = await User.findOneAndUpdate(
+            { _id: req.body.userId },
+            { $addToSet: { thoughts: thought._id } },
+            { runValidators: true, new: true }
         );
-      })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
-          return;
+        if (!user) {
+            return res.status(404).json({ message: 'No user found with this id' });
         }
-        res.json(dbUserData);
-      })
-      .catch((err) => res.json(err));
-  },
+        res.json(thought);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+},
+  // addThought(req, res) {
+  //   Thought.create(body)
+  //     .then(({ _id }) => {
+  //       console.log(_id);
+  //       return User.findOneAndUpdate(
+  //         { _id: body.userId },
+  //         { $push: { thoughts: _id } },
+  //         { new: true }
+  //       );
+  //     })
+  //     .then((dbUserData) => {
+  //       if (!dbUserData) {
+  //         res.status(404).json({ message: "No user found with this id!" });
+  //         return;
+  //       }
+  //       res.json(dbUserData);
+  //     })
+  //     .catch((err) => res.json(err));
+  // },
   //PUT to update a thought by id
   updateThought({ params, body }, res) {
     console.log(params.thoughtId);
