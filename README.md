@@ -37,7 +37,7 @@ To remove or delete a friend, click the DELETE request. On the URL enter the use
    A user can create a thought, get all thoughts or a single thought by ID, update a thought by ID, and delete a thought by ID. To create or add a thought, click the POST request. Enter the "thoughtText", "username", "userID" of the user creating the thought. To get all thoughts, click the GET All Thoughts request. All the thoughts that were created will appear, as well as the date and time they were created. Each created thought is assigned a unique thought ID. Click GET All Users to access the thought ID.
    ![Create a thought](./Assets/images/create-a-thought.png)
    ![Get all thoughts](./Assets/images/get-all-thoughts.png)
-   ![Get a single thought by ID](./assets/images/get-a-single-thoughts-by-ID.png)
+   ![Get a single thought by ID](./Assets/images/get-a-single-thoughts-by-ID.png)
 
 To get a thought by ID, click the GET Thought by Id request and enter the thought ID. To update a thought, click the PUT request. On the URL, enter the thought ID. Enter the necessary changes on the text body. To see the changes, click GET All Thoughts.
 ![Update a thought by ID](./Assets/images/update-a-thought-by-ID.png)
