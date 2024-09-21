@@ -8,8 +8,7 @@ This application is an API for a social network web application where users can 
 
 By using API GET routes in Insomnia Core for users and thoughts we can retrive the data from the database in the form of JSON. API POST, PUT, and DELETE routes in Insomnia Core successfully create, update, and delete users and thoughts in the database. API POST and DELETE routes is used to create and delete reactions to thoughts and add and remove friends to a user’s friend list.​
 
-The following animation demonstrates the application functionality:
-![A user can input the logo text, text color, shape of the logo and logo color using the command prompt.](https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing)
+The following animation demonstrates the application functionality:https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing
 
 ## Getting Started
 
@@ -53,8 +52,7 @@ To delete a thought by ID, click the DELETE request. On the URL, enter the thoug
 To delete a reaction, click the DELETE request. On the URL, enter the ID of the thought the user created a reaction or commented on, then the reaction ID.The message, "No thought with this id!" will appear when a reaction is deleted or a reaction is not associated with a user ID.
 ![Delete a review](./Assets/images/remove-reaction.png)
 
-MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made. The whole workflow of the application is shown in the following video.
-![Entire workflow of the application](https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing)
+MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made. The whole workflow of the application is shown in the following video:https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing
 
 ### Dependencies
 
