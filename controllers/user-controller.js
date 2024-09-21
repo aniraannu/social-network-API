@@ -1,5 +1,6 @@
 //Import the user schema
 const { User } = require("../models");
+const { Thought } = require("../models");
 
 //Create the user controller
 const userController = {
@@ -42,13 +43,13 @@ const userController = {
   //create a new user
   async createUser(req, res) {
     try {
-        const user = await User.create(req.body);
-        res.json(user);
+      const user = await User.create(req.body);
+      res.json(user);
     } catch (err) {
       console.log(err);
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-},
+  },
   // createUser({ body }, res) {
   //   User.create(body)
   //     .then((dbUserData) => res.json(dbUserData))
@@ -73,16 +74,44 @@ const userController = {
   //DELETE Routes
   //delete a user by _id
   deleteUser({ params }, res) {
-    User.findOneAndDelete({ _id: params.userId })
+    Thought.deleteMany({ userId: params.userId }) // Delete thoughts associated with the user
+      .then((deleteResult) => {
+        console.log(`Deleted thoughts: ${deleteResult.deletedCount}`); // Log the number of deleted thoughts
+        return User.findOneAndDelete({ _id: params.userId }); // Now delete the user
+      })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id" });
-          return;
+          return res
+            .status(404)
+            .json({ message: "No user found with this id" });
         }
-        res.json(dbUserData);
+        res
+          .status(200)
+          .json({
+            message: "User and associated thoughts deleted successfully",
+          }); // Provide a success message
       })
-      .catch((err) => res.status(400).json(err));
+      .catch((err) => {
+        console.error(err); // Log the error for debugging
+        res
+          .status(500)
+          .json({
+            message:
+              "An error occurred while deleting the user and their thoughts",
+          });
+      });
   },
+  // deleteUser({ params }, res) {
+  //   User.findOneAndDelete({ _id: params.userId })
+  //     .then((dbUserData) => {
+  //       if (!dbUserData) {
+  //         res.status(404).json({ message: "No user found with this id" });
+  //         return;
+  //       }
+  //       res.json(dbUserData);
+  //     })
+  //     .catch((err) => res.status(400).json(err));
+  // },
   //POST route
   //add a new friend to a user's friend list
   addFriend({ params }, res) {
