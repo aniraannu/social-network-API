@@ -9,7 +9,7 @@ This application is an API for a social network web application where users can 
 By using API GET routes in Insomnia Core for users and thoughts we can retrive the data from the database in the form of JSON. API POST, PUT, and DELETE routes in Insomnia Core successfully create, update, and delete users and thoughts in the database. API POST and DELETE routes is used to create and delete reactions to thoughts and add and remove friends to a user’s friend list.​
 
 The following animation demonstrates the application functionality:
-![A user can input the logo text, text color, shape of the logo and logo color using the command prompt.](./assets/images/Application-demo.webm.gif)
+![A user can input the logo text, text color, shape of the logo and logo color using the command prompt.](https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing)
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ The following animation demonstrates the application functionality:
    ![Get All users](./Assets/images/get-all-users.png)
    ![Get a single user by ID](./Assets/images/get%20a%20single%20user%20by%20id.png)
 
-To update a user by ID, click the PUT request. On the URL, enter the ID of the user whose information is going to be updated. To delete a user by ID, click the DELETE request and enter the user's ID. A message that reads, "User and thoughts deleted!" will appear if the user has been deleted from the database. If there is no such user or user ID in the system, the message, "No user with this id!" is shown. Click Find All Users to see if the user has been deleted.
+To update a user by ID, click the PUT request. On the URL, enter the ID of the user whose information is going to be updated. To delete a user by ID, click the DELETE request and enter the user's ID. A message that reads, "User and thoughts deleted!" will appear if the user has been deleted from the database. If there is no such user or user ID in the system, the message, "No user with this id!" is shown. Click Find All Users to see if the user has been deleted. The thoughts assosiated with the user will also be deleted along with user.
 ![Update a user](./Assets/images/update-user.png)
 ![Remove a user](./Assets/images/remove-a-user.png)
 
@@ -54,7 +54,7 @@ To delete a reaction, click the DELETE request. On the URL, enter the ID of the 
 ![Delete a review](./Assets/images/remove-reaction.png)
 
 MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made. The whole workflow of the application is shown in the following video.
-![Entire workflow of the application](./Assets/images/Application-demo.webm)
+![Entire workflow of the application](https://drive.google.com/file/d/1X_uVoQi05VWe6kVfsbPFnzza2DaLNsvK/view?usp=sharing)
 
 ### Dependencies
 
